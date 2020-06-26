@@ -121,10 +121,4 @@ public class ChiTietDonHang implements Serializable {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "com.nhom13.entity.ChiTietDonHang[ chiTietDonHangPK=" + chiTietDonHangPK + " ]";
-    }
-    
 }

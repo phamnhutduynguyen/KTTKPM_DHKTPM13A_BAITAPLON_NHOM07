@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.eclipse.persistence.internal.oxm.schema.model.All;
+
 import fit.se.nhom07.dao.ChiTietDonHangDAORemote;
 import fit.se.nhom07.dao.DonHangDAORemote;
 import fit.se.nhom07.entity.ChiTietDonHang;
@@ -58,36 +60,32 @@ public class QuanLyDonHang extends HttpServlet {
 		}else {
 			response.sendRedirect("Home");
 		}
-		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int cn = Integer.parseInt(request.getParameter("cn"));
-		
-		if(cn == 1) {
-			
-			doGet(request, response);
+		HttpSession session = request.getSession();
+		session.getAttribute("cart");		
+		int cn = Integer.parseInt(request.getParameter("cn"));		
+		if(cn == 1) {			
+			session.removeAttribute("cart");
 		}
 		if(cn == 2) {
-			System.out.println("DEo zo cn2");
-			String user =  request.getParameter("user");
-			System.out.println(user);
+			String user =  request.getParameter("user");		
 			List<DonHang> listdh = reciverRemote.recive();
 			for(DonHang dh : listdh) {
-				if(dh.getMaNguoiDung().getUsername().equalsIgnoreCase(user)) {
-					
-					DonHang dhcc = new DonHang();
-					dhcc.setMaNguoiDung(dh.getMaNguoiDung());
+				if(dh.getMaNguoiDung().getUsername().equalsIgnoreCase(user)) {										
+					DonHang dhcc = new DonHang();				
+					dhcc.setMaNguoiDung(dh.getMaNguoiDung());					
 					LocalDate ldate = LocalDate.now();
 					Date date = Date.valueOf(ldate);
-					dhcc.setNgayTaoDonHang(date);
-					donHangDAORemote.persistDonHang(dhcc);
-					List<DonHang> ListDH = donHangDAORemote.getDonHangFindAll();
-					DonHang dhnew = ListDH.get((ListDH.size()) - 1);
-					
+					dhcc.setNgayTaoDonHang(date);					
+					dhcc.setTinhTrangDonHang(1);					
+					donHangDAORemote.persistDonHang(dhcc);					
+					List<DonHang> ListDH = donHangDAORemote.getDonHangFindAll();					
+					DonHang dhnew = ListDH.get((ListDH.size()) - 1);					
 					List<ChiTietDonHang> ctdhcc = dh.getChiTietDonHangList();
 					for (ChiTietDonHang ct : ctdhcc) {
 						ChiTietDonHang ctcc = new ChiTietDonHang();
@@ -95,14 +93,15 @@ public class QuanLyDonHang extends HttpServlet {
 						ctcc.setChiTietDonHangPK(pk);
 						ctcc.setGiaSanPham(ct.getSanPham().getGia());
 						ctcc.setSoLuongSanPham(ct.getSoLuongSanPham());
+						ctcc.setDonHang(dhnew);
+						ctcc.setSanPham(ct.getSanPham());
 						chiTietDonHangDAORemote.persistChiTietDonHang(ctcc);
+						session.removeAttribute("cart");
+						System.out.println("remove OK!");
 					}
-					
-
 				}
 			}
 			response.sendRedirect("QuanLyDonHang");
 		}
 	}
-
 }

@@ -37,7 +37,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "DonHang.findAll", query = "SELECT d FROM DonHang d")
     , @NamedQuery(name = "DonHang.findByMaDonHang", query = "SELECT d FROM DonHang d WHERE d.maDonHang = :maDonHang")
-    , @NamedQuery(name = "DonHang.findByNgayTaoDonHang", query = "SELECT d FROM DonHang d WHERE d.ngayTaoDonHang = :ngayTaoDonHang")})
+    , @NamedQuery(name = "DonHang.findByNgayTaoDonHang", query = "SELECT d FROM DonHang d WHERE d.ngayTaoDonHang = :ngayTaoDonHang")
+    , @NamedQuery(name = "DonHang.findByTinhTrangDonHang", query = "SELECT d FROM DonHang d WHERE d.tinhTrangDonHang = :tinhTrangDonHang")})
 public class DonHang implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,21 +49,24 @@ public class DonHang implements Serializable {
     private Integer maDonHang;
     @Column(name = "NgayTaoDonHang")
     @Temporal(TemporalType.DATE)
-    private Date ngayTaoDonHang;
+    private Date ngayTaoDonHang;  
+	@Basic(optional = false)
+    @Column(name = "TinhTrangDonHang")
+    private int tinhTrangDonHang;
     @JoinColumn(name = "MaNguoiDung", referencedColumnName = "MaNguoiDung")
     @ManyToOne
     private NguoiDung maNguoiDung;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "donHang", fetch = FetchType.EAGER)
     private List<ChiTietDonHang> chiTietDonHangList;
 
-    public DonHang() {
-    }
+    public DonHang() {}
     
-    public DonHang(Integer maDonHang, Date ngayTaoDonHang, NguoiDung maNguoiDung) {
-		super();
-		this.maDonHang = maDonHang;
-		this.ngayTaoDonHang = ngayTaoDonHang;
-		this.maNguoiDung = maNguoiDung;
+    public int getTinhTrangDonHang() {
+		return tinhTrangDonHang;
+	}
+
+	public void setTinhTrangDonHang(int tinhTrangDonHang) {
+		this.tinhTrangDonHang = tinhTrangDonHang;
 	}
 
 	public DonHang(Integer maDonHang) {
@@ -101,7 +105,7 @@ public class DonHang implements Serializable {
     public void setChiTietDonHangList(List<ChiTietDonHang> chiTietDonHangList) {
         this.chiTietDonHangList = chiTietDonHangList;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -121,10 +125,4 @@ public class DonHang implements Serializable {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "com.nhom13.entity.DonHang[ maDonHang=" + maDonHang + " ]";
-    }
-    
 }

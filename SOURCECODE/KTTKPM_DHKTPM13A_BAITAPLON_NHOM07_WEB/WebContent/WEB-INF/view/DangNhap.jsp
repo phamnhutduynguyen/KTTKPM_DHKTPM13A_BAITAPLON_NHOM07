@@ -64,9 +64,7 @@
 							Đăng ký
 						</a>
 					</div>
-
-					</div>
-				
+				</div>
 			</div>
 		</div>
 	

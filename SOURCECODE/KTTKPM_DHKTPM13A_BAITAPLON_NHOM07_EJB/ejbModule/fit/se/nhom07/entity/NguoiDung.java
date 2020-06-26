@@ -166,7 +166,6 @@ public class NguoiDung implements Serializable {
     public void setDonHangList(List<DonHang> hoaDonList) {
         this.hoaDonList = hoaDonList;
     }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -186,10 +185,4 @@ public class NguoiDung implements Serializable {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "javaapplication7.NguoiDung[ maNguoiDung=" + maNguoiDung + " ]";
-    }
-    
 }

@@ -144,7 +144,7 @@ public class SanPham implements Serializable {
     public void setChiTietHoaDonList(List<ChiTietDonHang> chiTietHoaDonList) {
         this.chiTietHoaDonList = chiTietHoaDonList;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -164,10 +164,4 @@ public class SanPham implements Serializable {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "com.nhom13.entity.SanPham[ maSanPham=" + maSanPham + " ]";
-    }
-    
 }

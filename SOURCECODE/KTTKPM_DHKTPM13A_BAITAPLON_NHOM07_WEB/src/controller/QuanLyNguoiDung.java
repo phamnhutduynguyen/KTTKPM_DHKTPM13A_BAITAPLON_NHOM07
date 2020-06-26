@@ -39,12 +39,11 @@ public class QuanLyNguoiDung extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("admin") != null) {
 		List<NguoiDung> nguoiDungs = nguoiDungDAORemote.getNguoiDungFindAll();
-			List<NguoiDung> khachhangs = new ArrayList<NguoiDung>();
-			for (NguoiDung listKhachhang : nguoiDungs) {
-				if(listKhachhang.getIsNhanVien() == false)
-					khachhangs.add(listKhachhang);
+			List<NguoiDung> listNguoiDung = new ArrayList<NguoiDung>();
+			for (NguoiDung nguoiDung : nguoiDungs) {
+				listNguoiDung.add(nguoiDung);
 			}
-			request.setAttribute("dsnd", khachhangs);
+			request.setAttribute("dsnd", listNguoiDung);
 			request.getRequestDispatcher("/WEB-INF/view/QuanLyNguoiDung.jsp").forward(request, response);
 		}else {
 			response.sendRedirect("Home");

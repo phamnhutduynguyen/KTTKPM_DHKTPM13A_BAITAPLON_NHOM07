@@ -10,6 +10,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+
 /**
  *
  * @author 
@@ -42,16 +43,16 @@ public class ChiTietDonHangPK implements Serializable {
 
     public void setMaDonHang(int maDonHang) {
         this.maDonHang = maDonHang;
-    }
+    }   
 
-    public int getMaSanPham() {
+	public int getMaSanPham() {
         return maSanPham;
     }
 
     public void setMaSanPham(int maSanPham) {
         this.maSanPham = maSanPham;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -74,10 +75,4 @@ public class ChiTietDonHangPK implements Serializable {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "com.nhom13.entity.ChiTietDonHangPK[ maDonHang=" + maDonHang + ", maSanPham=" + maSanPham + " ]";
-    }
-    
 }

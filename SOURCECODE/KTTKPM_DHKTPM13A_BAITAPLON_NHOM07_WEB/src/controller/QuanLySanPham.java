@@ -1,6 +1,7 @@
 package controller;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -12,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fit.se.nhom07.dao.DanhMucDAORemote;
 import fit.se.nhom07.dao.SanPhamDAORemote;
+import fit.se.nhom07.entity.DanhMuc;
 import fit.se.nhom07.entity.SanPham;
 
 
@@ -24,6 +27,8 @@ public class QuanLySanPham extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        @EJB
        private SanPhamDAORemote sanPhamDAORemote;
+       @EJB
+       private DanhMucDAORemote danhMucDAORemote;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -51,7 +56,22 @@ public class QuanLySanPham extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		int cn = Integer.parseInt(request.getParameter("cn"));		
+		if(cn==1) {				
+			SanPham sanPham = new SanPham();
+			sanPham.setTenSanPham(request.getParameter("tensanpham"));
+			sanPham.setGia(Integer.parseInt(request.getParameter("gia")));
+			sanPham.setSoLuong(Integer.parseInt(request.getParameter("soluong")));
+			sanPham.setMoTa(request.getParameter("mota"));
+			sanPham.setHinh(request.getParameter("hinh"));
+			DanhMuc danhMuc =  danhMucDAORemote.getDanhMucFindByMaDanhMuc(Integer.parseInt(request.getParameter("madanhmuc")));
+			sanPham.setMaDanhMuc(danhMuc);
+			sanPhamDAORemote.persistSanPham(sanPham);
+			System.out.println("Them SP Thanh Cong");
+			response.sendRedirect("QuanLySanPham");
+			return;			
+		}		
+		response.sendRedirect("QuanLySanPham");
 	}
 
 }

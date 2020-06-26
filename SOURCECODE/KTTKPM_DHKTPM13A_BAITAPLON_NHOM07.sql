@@ -102,6 +102,7 @@ SET IDENTITY_INSERT [dbo].[DanhMuc] ON
 
 INSERT [dbo].[DanhMuc] ([MaDanhMuc], [TenDanhMuc]) VALUES (1, N'Chiên')
 INSERT [dbo].[DanhMuc] ([MaDanhMuc], [TenDanhMuc]) VALUES (2, N'Nướng')
+
 SET IDENTITY_INSERT [dbo].[DanhMuc] OFF
 SET IDENTITY_INSERT [dbo].[DonHang] ON 
 
@@ -111,18 +112,17 @@ SET IDENTITY_INSERT [dbo].[DonHang] OFF
 SET IDENTITY_INSERT [dbo].[NguoiDung] ON 
 
 INSERT [dbo].[NguoiDung] ([MaNguoiDung], [TenNguoiDung], [DiaChi], [Email], [SoDienThoai], [Username], [Pass], [isNhanVien]) VALUES (1, N'Phạm Nhứt Nguyên', N'Gò Vấp', N'phamnhutduynguyen@gmail.com', N'0123456789', N'1', N'1', 1)
-INSERT [dbo].[NguoiDung] ([MaNguoiDung], [TenNguoiDung], [DiaChi], [Email], [SoDienThoai], [Username], [Pass], [isNhanVien]) VALUES (2, N'Phạm Duy Nguyên', N'Tần Bình', N'gianguyengiaa3@gmail.com', N'0123456654', N'2', N'2', 0)
+INSERT [dbo].[NguoiDung] ([MaNguoiDung], [TenNguoiDung], [DiaChi], [Email], [SoDienThoai], [Username], [Pass], [isNhanVien]) VALUES (2, N'Phạm Duy Nguyên', N'Tân Bình', N'gianguyengiaa3@gmail.com', N'0123456654', N'2', N'2', 0)
 SET IDENTITY_INSERT [dbo].[NguoiDung] OFF
 SET IDENTITY_INSERT [dbo].[SanPham] ON 
 
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (1, N'Món Ăn 1', 30000, 20, N'Món Ăn 1', N'images/HinhSanPham/hinh1.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (2, N'Món Ăn 2', 15000, 15, N'Món Ăn 2', N'images/HinhSanPham/hinh2.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (3, N'Món Ăn 3', 15000, 15, N'Món Ăn 3', N'images/HinhSanPham/hinh3.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (4, N'Món Ăn 4', 15000, 15, N'Món Ăn 4', N'images/HinhSanPham/hinh4.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (5, N'Món Ăn 5', 30000, 20, N'Món Ăn 5', N'images/HinhSanPham/hinh5.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (6, N'Món Ăn 6', 15000, 15, N'Món Ăn 6', N'images/HinhSanPham/hinh6.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (7, N'Món Ăn 7', 15000, 15, N'Món Ăn 7', N'images/HinhSanPham/hinh7.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (8, N'Món Ăn 8', 15000, 15, N'Món Ăn 8', N'images/HinhSanPham/hinh8.jpg', 1)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (1, N'Beef steak American', 169000, 20, N'Sườn kiểu Mỹ hun khói liu riu trong nhiều giờ, ướp sốt BBQ vừa mềm, vừa đậm vị.', N'images/HinhSanPham/hinh1.jpg', 2)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (2, N'Mực trứng nướng', 150000, 15, N'Những con mực trứng béo, mềm, giàu dưỡng chất được tẩm ướp gia vị rồi nướng lên hứa hẹn sẽ là một món nhậu không thể tuyệt vời hơn', N'images/HinhSanPham/hinh2.jpg', 2)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (3, N'Tôm nướng muối ớt', 150000, 15, N'Những con tôm tươi được ướp gia vị rồi nướng trên than hoa, tôm chuyển màu vàng rực, vỏ tôm khô và giòn, thịt bên trong chắc, ngọt rất hấp dẫn', N'images/HinhSanPham/hinh3.jpg', 2)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (4, N'Bò cuộn nấm kim châm nướng', 200000, 15, N'Bò cuộn nấm kim châm nướng thơm ngon với phần ngọt của nấm thấm đều vào từng thớ thịt sẽ là món ăn cực kỳ đặc biệt cho gia đình vào ngày cuối tuần', N'images/HinhSanPham/hinh4.jpg', 2)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (5, N'Tôm chiên xù', 100000, 20, N'Tôm chiên xù thơm ngon giòn rụm tan trong miệng ngon khó cưỡng', N'images/HinhSanPham/hinh5.jpg', 1)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (6, N'Mực chiên bơ tỏi', 150000, 159000, 15, N'Cuộn gà vàng đều thật đẹp mắt,cắn vào miếng đầu tiên sẽ cảm nhận ngay được độ giòn và mùi thơm của thịt gà bên ngoài, kế đến là vị bùi bùi của nhân khoai, beo béo của thịt bên trong cuộn gà', N'images/HinhSanPham/hinh7.jpg', 1)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (8, N'Cá diêu hồng chiên xù', 169000, 15, N'Cá diêu hồng chiên xù với vị ngọt tự nhiên của thịt cá kết hợp với độ giòn tan hấp dẫn chắc chắn sẽ khiến bữa cơm gia đình bạn càng thêm ngon miệng đấy', N'images/HinhSanPham/hinh8.jpg', 1)
 SET IDENTITY_INSERT [dbo].[SanPham] OFF
 ALTER TABLE [dbo].[ChiTietDonHang]  WITH CHECK ADD FOREIGN KEY([MaDonHang])
 REFERENCES [dbo].[DonHang] ([MaDonHang])

@@ -30,11 +30,7 @@
 			</div>
 		</div>
 		<div class="clearfix"></div>
-
-
 		<!-- Code hien thi san pham -->
-
-
 		<div class="container_fullwidth">
 			<div class="container shopping-cart">
 				<div class="row">

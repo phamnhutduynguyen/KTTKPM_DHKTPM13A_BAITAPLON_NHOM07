@@ -55,7 +55,6 @@ public class CapNhatGioHang extends HttpServlet {
 				response.sendRedirect("ThongTinGioHang");
 			}
 		}
-		
 	}
 
 	/**

@@ -17,7 +17,6 @@
 <body id="home">
 	<div class="wrapper">
          <div class="header">
-            <!-- header -->>
              <%@ include file="header.jsp" %>
          </div>
          <div class="clearfix"></div>
@@ -29,7 +28,7 @@
             <div class="container">
             	
             	<!-- Doan code hien thi san pham -->
-            	<h3 style="text-align:center; color="blue" ">Sản phẩm thuộc danh mục <c:out value="${tenDanhMuc}"></c:out></h3>
+            	<h3 style="text-align:center;">Sản phẩm thuộc danh mục <c:out value="${tenDanhMuc}"></c:out></h3>
             	<div class="row">
             	<c:forEach items="${dssp}" var="dssp">
             		<div class="col-md-3 col-sm-6">
@@ -55,7 +54,8 @@
          <div class="clearfix"></div>
          <%@ include file="fotter.jsp" %>
       </div>
-      '<c:out value="" />'
+      
+	</div>
       <!-- Bootstrap core JavaScript==================================================-->
 	  <script type="text/javascript" src=<c:out value="js/jquery-1.10.2.min.js" />></script>
 	  <script type="text/javascript" src=<c:out value="js/jquery.easing.1.3.js" />></script>

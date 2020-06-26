@@ -28,7 +28,7 @@
                   No. 02, Nguyen Van Bao, Go Vap Distrist, Ho Chi Minh City , Vietnam
                 </p>
                 <p>
-                  Call Us :  1900 1008
+                  Call Us :  1900 1008 XXXX
                 </p>
                 <p>
                   Email : copyright@gmail.com
@@ -87,11 +87,7 @@
             <div class="row">
               <div class="col-md-6">
                 <p>
-                  Copyright © 2012. Designed by 
-                  <a href="#">
-                    Michael Lee
-                  </a>
-                  . All rights reseved
+                  Copyright © 2020
                 </p>
               </div>
               <div class="col-md-6">

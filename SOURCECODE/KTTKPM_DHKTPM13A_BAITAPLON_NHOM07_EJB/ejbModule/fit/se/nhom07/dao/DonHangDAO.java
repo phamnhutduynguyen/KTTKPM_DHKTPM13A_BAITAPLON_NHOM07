@@ -83,7 +83,8 @@ public class DonHangDAO
     /**
      * @generated DT_ID=none
      */
-    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<DonHang> getDonHangFindAll() {
         return em.createNamedQuery("DonHang.findAll").getResultList();
     }
@@ -91,7 +92,8 @@ public class DonHangDAO
     /**
      * @generated DT_ID=none
      */
-    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<DonHang> getDonHangFindByMaDonHang(Integer maDonHang) {
         return em.createNamedQuery("DonHang.findByMaDonHang").setParameter("maDonHang", maDonHang).getResultList();
     }
@@ -99,11 +101,16 @@ public class DonHangDAO
     /**
      * @generated DT_ID=none
      */
-    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    @SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public List<DonHang> getDonHangFindByNgayTaoDonHang(java.util.Date ngayTaoDonHang) {
         return em.createNamedQuery("DonHang.findByNgayTaoDonHang").setParameter("ngayTaoDonHang", ngayTaoDonHang).getResultList();
     }
 
+    @SuppressWarnings("unchecked")
+	public List<DonHang> getDonHangFindByTinhTrangDonHang(int tinhTrangDonHang) {
+        return em.createNamedQuery("DonHang.findByTinhTrangDonHang").setParameter("tinhTrangDonHang", tinhTrangDonHang).getResultList();
+    }
     /**
      * @generated DT_ID=none
      */

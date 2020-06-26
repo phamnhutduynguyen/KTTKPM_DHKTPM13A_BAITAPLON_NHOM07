@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.servlet.ServletException;
@@ -14,7 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import fit.se.nhom07.entity.SanPham;
 import fit.se.nhom07.giohang.GioHangBeanRemote;
-
 
 /**
  * Servlet implementation class GioHang
@@ -29,7 +26,6 @@ public class ThongTinGioHang extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -44,10 +40,9 @@ public class ThongTinGioHang extends HttpServlet {
 			for (Entry<SanPham, Integer> entry : ghBean.getGioHang().entrySet()) {
 			     tongTienGioHang  += entry.getKey().getGia() * entry.getValue();
 			}
-		}
-		
+		}		
 		request.setAttribute("tongtien", tongTienGioHang);
-		request.getRequestDispatcher("/WEB-INF/view/GioHang.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/GioHang.jsp").forward(request, response);		
 	}
 
 	/**

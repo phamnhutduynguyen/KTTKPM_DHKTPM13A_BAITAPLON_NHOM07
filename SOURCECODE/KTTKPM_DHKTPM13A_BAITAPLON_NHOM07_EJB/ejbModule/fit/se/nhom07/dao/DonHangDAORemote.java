@@ -47,5 +47,7 @@ public interface DonHangDAORemote
      * @generated DT_ID=none
      */
     public List<DonHang> getDonHangFindByNgayTaoDonHang(java.util.Date ngayTaoDonHang);
+    
+    public List<DonHang> getDonHangFindByTinhTrangDonHang(int tinhTrangDonHang);
 
 }

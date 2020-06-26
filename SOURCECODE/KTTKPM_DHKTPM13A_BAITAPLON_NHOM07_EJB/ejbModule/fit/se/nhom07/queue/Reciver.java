@@ -25,10 +25,10 @@ import fit.se.nhom07.entity.DonHang;
 @Stateless
 @LocalBean
 public class Reciver implements ReciverRemote {
-	@Resource(mappedName = "jms/JMSConnectionFactory")
+	@Resource(mappedName = "jms/JMSConnectionFactoryJNDI")
     private ConnectionFactory connectionFactory;
  
-    @Resource(mappedName = "jms/donhangqueue")
+    @Resource(mappedName = "jms/donhangqueueJNDI")
     Queue myQueue;
     
     /**
@@ -52,9 +52,7 @@ public class Reciver implements ReciverRemote {
 					Object obj = ((ObjectMessage) message).getObject();
 					DonHang dh = (DonHang) obj;
 					list.add(dh);
-				}
-				
-				
+				}	
 			}
 			session.close();
             connection.close();

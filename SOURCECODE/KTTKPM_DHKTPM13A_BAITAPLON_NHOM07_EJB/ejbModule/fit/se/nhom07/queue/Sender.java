@@ -24,10 +24,10 @@ import fit.se.nhom07.entity.DonHang;
 @Stateless
 public class Sender implements SenderRemote{
 
-	@Resource(mappedName = "jms/JMSConnectionFactory")
+	@Resource(mappedName = "jms/JMSConnectionFactoryJNDI")
     private ConnectionFactory connectionFactory;
  
-    @Resource(mappedName = "jms/donhangqueue")
+    @Resource(mappedName = "jms/donhangqueueJNDI")
     Queue queue;
    
     Jsonb jsonb = JsonbBuilder.create();

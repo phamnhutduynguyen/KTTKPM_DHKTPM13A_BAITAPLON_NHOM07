@@ -58,8 +58,10 @@ public class DangNhap extends HttpServlet {
 		
 		
 		if(pass.equals(nd.getPass())) {
+			System.out.println("da vao nhan vien");
 			session.setAttribute("user", nd.getUsername());
 			if(nd.getIsNhanVien()) {
+				System.out.println("admin 1");
 				session.setAttribute("admin", "1");
 				response.sendRedirect("QuanLyDonHang");
 			}else {
