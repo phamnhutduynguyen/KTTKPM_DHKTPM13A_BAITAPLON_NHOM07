@@ -1,8 +1,8 @@
 ﻿use master
 go
-CREATE DATABASE KTTKPM_DHKTPM13A_BAITAPLON_NHOM07
+CREATE DATABASE nguyen3
 go
-USE [KTTKPM_DHKTPM13A_BAITAPLON_NHOM07]
+USE [nguyen3]
 GO
 SET ANSI_NULLS ON
 GO
@@ -121,7 +121,7 @@ INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hi
 INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (3, N'Tôm nướng muối ớt', 150000, 15, N'Những con tôm tươi được ướp gia vị rồi nướng trên than hoa, tôm chuyển màu vàng rực, vỏ tôm khô và giòn, thịt bên trong chắc, ngọt rất hấp dẫn', N'images/HinhSanPham/hinh3.jpg', 2)
 INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (4, N'Bò cuộn nấm kim châm nướng', 200000, 15, N'Bò cuộn nấm kim châm nướng thơm ngon với phần ngọt của nấm thấm đều vào từng thớ thịt sẽ là món ăn cực kỳ đặc biệt cho gia đình vào ngày cuối tuần', N'images/HinhSanPham/hinh4.jpg', 2)
 INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (5, N'Tôm chiên xù', 100000, 20, N'Tôm chiên xù thơm ngon giòn rụm tan trong miệng ngon khó cưỡng', N'images/HinhSanPham/hinh5.jpg', 1)
-INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (6, N'Mực chiên bơ tỏi', 150000, 159000, 15, N'Cuộn gà vàng đều thật đẹp mắt,cắn vào miếng đầu tiên sẽ cảm nhận ngay được độ giòn và mùi thơm của thịt gà bên ngoài, kế đến là vị bùi bùi của nhân khoai, beo béo của thịt bên trong cuộn gà', N'images/HinhSanPham/hinh7.jpg', 1)
+INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (6, N'Mực chiên bơ tỏi', 150000, 15, N'Cuộn gà vàng đều thật đẹp mắt,cắn vào miếng đầu tiên sẽ cảm nhận ngay được độ giòn và mùi thơm của thịt gà bên ngoài, kế đến là vị bùi bùi của nhân khoai, beo béo của thịt bên trong cuộn gà', N'images/HinhSanPham/hinh7.jpg', 1)
 INSERT [dbo].[SanPham] ([MaSanPham], [TenSanPham], [Gia], [SoLuong], [MoTa], [Hinh], [MaDanhMuc]) VALUES (8, N'Cá diêu hồng chiên xù', 169000, 15, N'Cá diêu hồng chiên xù với vị ngọt tự nhiên của thịt cá kết hợp với độ giòn tan hấp dẫn chắc chắn sẽ khiến bữa cơm gia đình bạn càng thêm ngon miệng đấy', N'images/HinhSanPham/hinh8.jpg', 1)
 SET IDENTITY_INSERT [dbo].[SanPham] OFF
 ALTER TABLE [dbo].[ChiTietDonHang]  WITH CHECK ADD FOREIGN KEY([MaDonHang])
